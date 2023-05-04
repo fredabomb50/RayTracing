@@ -60,6 +60,7 @@ class vec3
 };
 
 
+// Stream operations
 inline istream& operator>>(istream& stream, vec3& v)
 {   
     stream >> v.e[0] >> v.e[1] >> v.e[2];
@@ -72,10 +73,59 @@ inline ostream& operator<<(ostream& stream, vec3& v)
     return stream;
 }
 
+
+// Conversions
 inline void vec3::make_unit_vector()
 {
     float k = 1.0 / vec3::length();
     e[0] *= k;
     e[1] *= k;
     e[2] *= k;
+}
+
+// Standard operations
+inline vec3 operator+(const vec3& v1, const vec3& v2)
+{
+    return vec3( v1.e[0] + v2.e[0], v1.e[1] + v2.e[1], v1.e[2] + v2.e[2] );
+}
+
+inline vec3 operator-(const vec3& v1, const vec3& v2)
+{
+    return vec3( v1.e[0] - v2.e[0], v1.e[1] - v2.e[1], v1.e[2] - v2.e[2] );
+}
+
+inline vec3 operator*(const vec3& v1, const vec3& v2)
+{
+    return vec3( v1.e[0] * v2.e[0], v1.e[1] * v2.e[1], v1.e[2] * v2.e[2] );
+}
+
+inline vec3 operator/(const vec3& v1, const vec3& v2)
+{
+    return vec3( v1.e[0] / v2.e[0], v1.e[1] / v2.e[1], v1.e[2] / v2.e[2] );
+}
+
+inline vec3 operator*(float val, const vec3& v)
+{
+    return vec3( val * v.e[0], val * v.e[1], val * v.e[2] );
+}
+
+// THIS MAY NEED TO ALIGN VERBATIM WITH THE BOOK
+inline vec3 operator/(float val, const vec3& v)
+{
+    return vec3( v.e[0] / val, v.e[1] / val, v.e[2] / val );
+}
+
+inline float dot(const vec3& v1, const vec3& v2)
+{
+    return v1.e[0] * v2.e[0] + v1.e[1] * v2.e[1] + v1.e[2] * v2.e[2];
+}
+
+inline vec3 cross(const vec3& v1, const vec3& v2)
+{
+    return vec3
+    (
+        ( (v1.e[1] * v2.e[2]) - (v1.e[2] - v2.e[1]) ),
+        ( (v1.e[1] * v2.e[2]) - (v1.e[2] - v2.e[1]) ),
+        ( (v1.e[1] * v2.e[2]) - (v1.e[2] - v2.e[1]) )
+    );
 }
