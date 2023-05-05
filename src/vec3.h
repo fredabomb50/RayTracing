@@ -47,7 +47,7 @@ class vec3
         inline void make_unit_vector();
 
 
-        // Size and stats
+        // length, direction, etc.
         inline float length() const 
         {
             return sqrt( e[0]*e[0] + e[1]*e[1] + e[2]*e[2] );
@@ -82,6 +82,7 @@ inline void vec3::make_unit_vector()
     e[1] *= k;
     e[2] *= k;
 }
+
 
 // Standard operations
 inline vec3 operator+(const vec3& v1, const vec3& v2)
