@@ -51,11 +51,14 @@ int main()
 
 
 // function definitions
+   
+/*Color lerp between 2 values; default is white and a light blue*/
 vec3 color(const ray& r)
 {
     vec3 unit_directon = unit_vector( r.direction() );
 
     float t = 0.5 * (unit_directon.y() + 1.0);
 
+    // blended = (1.0 - t) * start_value + t * end_value, 
     return (1.0 - t) * vec3(1.0, 1.0, 1.0) + t * vec3(0.5, 0.7, 1.0);
 }
