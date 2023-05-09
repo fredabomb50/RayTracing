@@ -1,7 +1,3 @@
-
-
-
-
-using std::cout;
+#include "ppm.h"
 
 
