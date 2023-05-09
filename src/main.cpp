@@ -7,6 +7,8 @@ using std::cout;
 vec3 color(const ray& r);
 
 
+// QUICK NOTE LEADING TO THE ADDITION OF A SPHERE FOR RAY TRACING AGAINST:
+//  x = (-b ± √(b^2 - 4ac)) / (2a)
 
 int main()
 {
