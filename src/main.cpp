@@ -15,6 +15,9 @@ bool hit_sphere( const vec3& center, float radius, const ray& r);
 //  x = (-b ± √(b^2 - 4ac)) / (2a)
 
 
+// ===============================================
+//                  M A I N
+// ===============================================
 int main()
 {
     // declare file dimensions
