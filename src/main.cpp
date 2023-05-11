@@ -21,8 +21,8 @@ bool hit_sphere( const vec3& center, float radius, const ray& r);
 int main()
 {
     // declare file dimensions
-    int x = 300;
-    int y = 300;
+    int x = 200;
+    int y = 100;
 
     // declare file header
     FILE* test_file = createPPM( "test.ppm", x, y, 255 );
