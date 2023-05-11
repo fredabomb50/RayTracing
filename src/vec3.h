@@ -77,7 +77,7 @@ inline ostream& operator<<(ostream& stream, vec3& v)
 // Conversions
 inline void vec3::make_unit_vector()
 {
-    float k = 1.0 / vec3::length();
+    float k = 1.0 / length();
     e[0] *= k;
     e[1] *= k;
     e[2] *= k;
